@@ -52,15 +52,20 @@ function drawChart() {
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':'My Average Day', 'width':550, 'height':400};
+  var options = {'title':'תוצאות בחירות 2019', 'width':550, 'height':400};
 
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+    var chart = new google.visualization.BarChart(document.getElementById('chart'));
   chart.draw(data, options);
 }
 </script>
 
 <body>
     <div id="piechart">
+
+    </div>
+    <div id="chart">
 
     </div>
 </body>

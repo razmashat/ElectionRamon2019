@@ -30,12 +30,17 @@
 </div>--%>
         <header><p style="background-color:white; font-size:xx-large;">בחירות 2019
 
-  <button class="button5" id="Manager" style="right:auto">מנהל</button>
+  
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+
   
             </p></header>
 
 <!-- Manager Button -->
-    
+    <%if (Session["Manager"].ToString() == "yes")
+        {%>
+  
+    <% }%>
 <!-- Overlay effect when opening sidebar on small screens -->
 
 

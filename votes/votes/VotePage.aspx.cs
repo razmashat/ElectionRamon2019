@@ -11,12 +11,17 @@ namespace votes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Button1.Visible = Session['Manager'] == "yes";
         }
 
         protected void ImageButton_Click(object sender, ImageClickEventArgs e)
         {
-            ((ImageButton)sender).CommandArgument;
+         //   ((ImageButton)sender).CommandArgument;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Management.aspx");
         }
     }
 }

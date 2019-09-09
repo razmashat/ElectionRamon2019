@@ -12,7 +12,10 @@ namespace votes
         public static int[] Mandats = new int[31];
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Mandats[0] = 100;
+            Mandats[1] = 10;
+            Mandats[2] = 1;
+
         }
     }
 }
