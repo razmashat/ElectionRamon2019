@@ -11,7 +11,7 @@ namespace votes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Button1.Visible = Session['Manager'] == "yes";
+            Button1.Visible = Session["Manager"].ToString() == "yes";
         }
 
         protected void ImageButton_Click(object sender, ImageClickEventArgs e)
