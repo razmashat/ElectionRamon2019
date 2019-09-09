@@ -7,7 +7,7 @@ using System.Data;
 
 namespace votes
 {
-    class AdminDal
+    public class AdminDal
     {
         /// <summary>
         /// check if a given id is an admin

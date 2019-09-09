@@ -7,7 +7,7 @@ using System.Data;
 
 namespace votes
 {
-    class IdDal
+    public class IdDal
     {
         /// <summary>
         /// checks if someone voted already

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using votes;
 
 namespace Logic
 {
@@ -12,7 +13,7 @@ namespace Logic
 
 
         public bool login(int id) {
-
+            
             return true;
 
         }

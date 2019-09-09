@@ -7,7 +7,7 @@ using System.Data;
 
 namespace votes
 {
-    class PartyDal
+   public class PartyDal
     {
         /// <summary>
         /// gets the code of a party and raises its vote counter by 1
