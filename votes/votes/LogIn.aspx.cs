@@ -11,7 +11,7 @@ namespace votes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string[] arr = new string[7]; 
+            string[] arr = new string[7];
             Session["Manager"] = "no";
             if (Request.Form["submit"] != null)
             {

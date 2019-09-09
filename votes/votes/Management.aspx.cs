@@ -12,6 +12,10 @@ namespace votes
         public static int[] Mandats = new int[31];
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Manager"].ToString() != "yes")
+            {
+                Response.Redirect(@"https://he.wikipedia.org/wiki/%D7%A9%D7%92%D7%99%D7%90%D7%94_404");
+            }
             Mandats[0] = 100;
             Mandats[1] = 10;
             Mandats[2] = 1;

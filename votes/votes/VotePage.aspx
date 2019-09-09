@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
+    body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .button5 {
   background-color: white;
   color: black;
@@ -19,37 +20,38 @@
   background-color: #555555;
   color: white;
 }
+input[type=submit] {
+  width: 100%;
+  background-color: dodgerblue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #0073e6;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding-top:2%;
+}
+body {
+   direction: rtl;
+}
 </style>
 <body style="background-color:lightgray;">
     <form id="form1" runat="server">
-<%--<div class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
-  
-<!-- Top menu on small screens -->
-    
- 
-</div>--%>
-        <header><p style="background-color:white; font-size:xx-large;">בחירות 2019
-
-  
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-
-  
-            </p></header>
-
-<!-- Manager Button -->
-    <%if (Session["Manager"].ToString() == "yes")
-        {%>
-  
-    <% }%>
-<!-- Overlay effect when opening sidebar on small screens -->
-
-
+       <header class="w3-container w3-top w3-white w3-xlarge w3-padding-16" style="color:blue">
+  <span class="w3-left w3-padding">בחירות 2019</span>
+</header>            <asp:Button ID="button5" runat="server" OnClick="Button1_Click" Text="מנהל" />
 <!-- !PAGE CONTENT! -->
-
-  
   <!-- Photo grid -->
- 
-      
+ <div align="center">
         <asp:ImageButton ID="ImageButton1" runat="server"   ImageUrl="מפלגות%202.0/Screenshot_1.png" OnClick="ImageButton_Click" CommandArgument="1"/>
         <asp:ImageButton ID="ImageButton2" runat="server"   ImageUrl="~/מפלגות 2.0/Screenshot_2.png" OnClick="ImageButton_Click" CommandArgument="2"/>
         <asp:ImageButton ID="ImageButton3" runat="server"   ImageUrl="~/מפלגות 2.0/Screenshot_3.png" OnClick="ImageButton_Click" CommandArgument="3"/>
@@ -97,23 +99,9 @@
         <asp:ImageButton ID="ImageButton30" runat="server"   ImageUrl="~/מפלגות 2.0/Screenshot_30.png"  OnClick="ImageButton_Click" CommandArgument="29"/>
         <asp:ImageButton ID="ImageButton31" runat="server"   ImageUrl="~/מפלגות 2.0/Screenshot_31.png"  OnClick="ImageButton_Click" CommandArgument="30"/>
         <asp:ImageButton ID="ImageButton32" runat="server"   ImageUrl="~/מפלגות 2.0/Screenshot_32.png" OnClick="ImageButton_Click" CommandArgument="31"/>
-      
-  
-  
-
-
-  
-
+</div>
 <!-- End page content -->
-
-
-
-
-
     </form>
-
-
-
 
 </body>
 </html>
