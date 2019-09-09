@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{59568CC6-302E-4499-8834-8A5A4A89B99D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "votes", "Y:\תשפ\הנדסת תכנה כיתה יב\תלמידים\┬┴┬┴┤  (⌐■├┬┴┬┴\votes\votes\votes.csproj", "{5033A653-A7AF-47DC-8CFE-B9E67E6B7075}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "votes", "..\votes\votes.csproj", "{5033A653-A7AF-47DC-8CFE-B9E67E6B7075}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
