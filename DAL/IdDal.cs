@@ -27,7 +27,7 @@ namespace votes
         /// </summary>
         /// <param name="id">the id</param>
         /// <returns>true: the id exists in the data base, else false</returns>
-        private static bool Exists(string id)
+        public static bool Exists(string id)
         {
             string sql = "SELECT * FROM IdTBL WHERE IId='" + id + "'";
             DataSet ds = OleDbHelper.Fill(sql, "IdTBL");

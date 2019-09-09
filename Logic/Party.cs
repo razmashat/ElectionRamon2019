@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace votes
 {
-    class Party
+    public class Party
     {
 
         public int PartyID { get; private set; }
