@@ -5,7 +5,7 @@
 <title>בחירות 2019 רמון</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<%--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--%>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
     body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -43,12 +43,16 @@ div {
 body {
    direction: rtl;
 }
+    .w3-container:after, .w3-container {content:"";display:table;clear:both}
+    .w3-container {padding:0.01em 16px}
+
 </style>
 <body style="background-color:lightgray;">
     <form id="form1" runat="server">
        <header class="w3-container w3-top w3-white w3-xlarge w3-padding-16" style="color:blue">
   <span class="w3-left w3-padding">בחירות 2019</span>
-</header>            <asp:Button ID="button5" runat="server" OnClick="Button1_Click" Text="מנהל" />
+</header>     
+<asp:Button ID="button5" runat="server" OnClick="Button1_Click" Text="מנהל" />
 <!-- !PAGE CONTENT! -->
   <!-- Photo grid -->
  <div align="center">
