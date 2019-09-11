@@ -25,8 +25,8 @@ namespace Logic
         /// login function to use in ui
         /// </summary>
         /// <param name="id"> id number in string</param>
-        /// <returns>true if if exists and didnt voted else false</returns>
-        public static bool login(string id)
+        /// <returns>true if exists and didnt voted else false</returns>
+        public static bool Login(string id)
         {
 
             if (IdDal.Exists(id) && !IdDal.DidVote(id))
