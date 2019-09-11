@@ -21,16 +21,7 @@ namespace votes
             DataSet ds = OleDbHelper.Fill(sql, "IdTBL");
             return bool.Parse(ds.Tables["IdTBL"].Rows[0]["IVoted"].ToString());
         }
-        /// <summary>
-        /// gets the total amount of ids in the db
-        /// </summary>
-        /// <returns></returns>
-        public static int IdCount()
-        {
-            string sql = "SELECT COUNT(IId) AS Num FROM IdTBL";
-            DataSet ds = OleDbHelper.Fill(sql, "IdTBL");
-            return int.Parse(ds.Tables["IdTBL"].Rows[0]["Num"].ToString());
-        }
+        
         /// <summary>
         /// checks if an id exists in the data base
         /// </summary>
@@ -47,12 +38,14 @@ namespace votes
         /// make it that a person voted in the data base
         /// </summary>
         /// <param name="id">the id of the person</param>
-        public static void Vote(string id)
+        /// <returns>true: the person exists in db, else false</returns>
+        public static bool Vote(string id)
         {
             if (!Exists(id))
-                throw new Exception("InValid ID");
+                return false;
             string sql = "UPDATE IdTBL SET IVoted=TRUE WHERE IId='" + id + "'";
             OleDbHelper.DoQuery(sql);
+            return true;
         }
     }
 }

@@ -11,8 +11,7 @@ namespace votes
     {
         static void Main(string[] args)
         {
-            DataSet ds = PartyDal.GetVotes();
-            Console.WriteLine(PartyDal.GetName(1));
+            Console.WriteLine(PartyDal.GetVotesByID(4));
             Console.ReadKey();
 
         }

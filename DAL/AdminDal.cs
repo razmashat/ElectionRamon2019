@@ -23,9 +23,9 @@ namespace votes
 
         public static int GetTotalVotes()
         {
-            string sql = "SELECT SUM(PVotes) FROM PartyTBL";
+            string sql = "SELECT SUM(PVotes) AS sum FROM PartyTBL";
             DataSet ds = OleDbHelper.Fill(sql, "PartyTBL");
-            return int.Parse(ds.Tables["PartyTBL"].Rows[0]["Sum(PVotes)"].ToString());
+            return int.Parse(ds.Tables["PartyTBL"].Rows[0]["sum"].ToString());
         }
 
         

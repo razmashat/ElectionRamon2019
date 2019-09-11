@@ -8,25 +8,32 @@ namespace votes
 {
     public class Party
     {
-
         public int PartyID { get; private set; }
-        public string name { get; private set; }
+        public string name
+        {
+            get
+            { return PartyDal.GetName(PartyID); }
+        }
 
-        public int PartyVotes { get; set; }
+        public int PartyVotes
+        {
+            get { return PartyDal.GetVotesByID(PartyID); }
+        }
 
         public int Mandats { get; set; }
 
 
-        public Party(int ID,string Name)
+        public Party(int ID)
         {
             this.PartyID = ID;
-            this.name = Name;
-            this.PartyVotes = 0;
             this.Mandats = 0;
 
         }
 
-        
+        public void AddVote()
+        {
+            PartyDal.AddVote(PartyID);
+        }
 
 
 

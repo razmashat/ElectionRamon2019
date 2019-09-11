@@ -10,19 +10,17 @@ namespace Logic
 {
     public class Functions
     {
-
-
         public static Party[] Parties = new Party[31];
 
         public static void InitArr()
         {
             for (int i = 0; i < Parties.Length; i++)
             {
-                Parties[i] = new Party(i + 1, PartyDal.GetName(i));
+                Parties[i] = new Party(i + 1);
             }
         }
         /// <summary>
-        /// login function to use in ui
+        /// login function to use in ui, first check if admin using IsAdmin()
         /// </summary>
         /// <param name="id"> id number in string</param>
         /// <returns>true if exists and didnt voted else false</returns>
@@ -52,19 +50,6 @@ namespace Logic
             return Parties[id].PartyVotes;
         }
 
-        /// <summary>
-        /// get total votes of all praties
-        /// </summary>
-        /// <returns>total votes of all parties</returns>
-        public static void GetAllVotes()
-        {
-            for (int i = 1; i <= 31; i++)
-            {
-                Parties[i].PartyVotes = GetVotesOfPartyByID(i);
-            }
-        }
-
-
         public static void GetMandats()
         {
 
@@ -75,9 +60,17 @@ namespace Logic
 
         }
 
+       public static bool IsAdmin(string id)
+       {
+            return AdminDal.IsAdmin(id);
+       }
+
+       public static bool DoVote(string id)
+       {
+            return IdDal.Vote(id);
+       }
        
-
-
+       
 
 
     }
