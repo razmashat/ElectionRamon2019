@@ -50,17 +50,6 @@ namespace Logic
             return Parties[id].PartyVotes;
         }
 
-        /// <summary>
-        /// get total votes of all praties
-        /// </summary>
-        /// <returns>total votes of all parties</returns>
-        public static void GetAllVotes()
-        {
-            for (int i = 1; i <= 31; i++)
-            {
-                Parties[i].PartyVotes = GetVotesOfPartyByID(i);
-            }
-        }
 
 
         public static void GetMandats()
