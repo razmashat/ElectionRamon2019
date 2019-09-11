@@ -64,6 +64,17 @@ namespace Logic
 
         }
 
+
+        public static void GetMandats()
+        {
+
+            for (int i = 1; i <= 31; i++)
+            {
+
+            }
+
+        }
+
        
 
 

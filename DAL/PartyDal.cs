@@ -36,5 +36,14 @@ namespace votes
             string sql = "SELECT PCode,PVotes FROM PartyTBL";
             return OleDbHelper.Fill(sql, "PartyTBL");
         }
+
+        public static string GetName(int id)
+        {
+
+            string sql = "SELECT PName FROM PartyTBL WHERE PCode = " + id;
+            DataSet ds = OleDbHelper.Fill(sql, "PartyTBL");
+            return ds.Tables["PartyTBL"].Rows[0]["PName"].ToString();
+
+        }
     }
 }
