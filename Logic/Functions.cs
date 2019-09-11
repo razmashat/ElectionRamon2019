@@ -50,12 +50,60 @@ namespace Logic
             return Parties[id].PartyVotes;
         }
 
-        public static void GetMandats()
+        /// <summary>
+        /// get total votes of all praties
+        /// </summary>
+        /// <returns>total votes of all parties</returns>
+        public static void GetAllVotes()
         {
-
             for (int i = 1; i <= 31; i++)
             {
+                Parties[i].PartyVotes = GetVotesOfPartyByID(i);
+            }
+        }
 
+
+        public static void GetMandats()
+        {
+            int TotalVotes = AdminDal.GetTotalVotes();
+            int Mandat = TotalVotes / 120;
+            int[] LeftOverVotes = new int[31];
+            int TotalMandats = 0;
+            double BlockPrecents = TotalVotes / 100 * 3.25;
+            for (int i = 0; i < 31; i++)
+            {
+                if (Parties[i].PartyVotes <= BlockPrecents)
+                {
+                    TotalVotes -= Parties[i].PartyVotes;
+                    //Parties[i].PartyVotes = 0;
+                }
+            }
+            Mandat = TotalVotes / 120;
+            for (int i = 0; i < 31; i++)
+            {
+                if (Parties[i].PartyVotes > BlockPrecents)
+                {
+                    Parties[i].Mandats = Parties[i].PartyVotes / Mandat;
+                    TotalMandats += Parties[i].Mandats;
+                    LeftOverVotes[i] = Parties[i].PartyVotes - (Parties[i].Mandats * Mandat);
+                }
+             
+            }
+
+            for (int i = TotalMandats; i < 120; i++)
+            {
+                int MandatID = -1;
+                int MandatVotes = -1;
+                for (int j = 0; j < 31; j++)
+                {
+                    if (LeftOverVotes[j] > MandatVotes  )
+                    {
+                        MandatVotes = LeftOverVotes[j];
+                        MandatID = j;
+                    }
+                }
+                LeftOverVotes[MandatID] = 0;
+                Parties[MandatID].Mandats++;
             }
 
         }
