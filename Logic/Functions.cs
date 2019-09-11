@@ -14,7 +14,13 @@ namespace Logic
 
         public static Party[] Parties = new Party[31];
 
-
+        public static void InitArr()
+        {
+            for (int i = 0; i < Parties.Length; i++)
+            {
+                Parties[i] = new Party(i + 1, PartyDal.GetName(i));
+            }
+        }
         /// <summary>
         /// login function to use in ui
         /// </summary>
@@ -31,7 +37,10 @@ namespace Logic
 
 
         }
-
+        public static int GetTotalVotes()
+        {
+            return AdminDal.GetTotalVotes();
+        }
         /// <summary>
         /// get party total votes
         /// </summary>
@@ -47,21 +56,12 @@ namespace Logic
         /// get total votes of all praties
         /// </summary>
         /// <returns>total votes of all parties</returns>
-        public static int[] GetAllVotes()
+        public static void GetAllVotes()
         {
-
-            int[] VotesArr = new int[31];
             for (int i = 1; i <= 31; i++)
             {
-                VotesArr[i] = 0;
+                Parties[i].PartyVotes = GetVotesOfPartyByID(i);
             }
-            for (int i = 1; i <= 31; i++)
-            {
-                VotesArr[i] = GetVotesOfPartyByID(i);
-            }
-
-            return VotesArr;
-
         }
 
 
