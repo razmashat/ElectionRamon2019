@@ -107,7 +107,10 @@ namespace Logic
             return IdDal.Vote(id);
        }
        
-       
+       public static bool DidVote(string id)
+       {
+            return IdDal.DidVote(id);
+       }
 
 
     }

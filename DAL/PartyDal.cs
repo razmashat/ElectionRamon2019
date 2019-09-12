@@ -40,7 +40,7 @@ namespace votes
         }
         public static int GetVotesByID(int id)
         {
-            string sql = "SELECT PVotes FROM PartyTBL";
+            string sql = "SELECT PVotes FROM PartyTBL WHERE PVotes="+id;
             DataSet ds = OleDbHelper.Fill(sql, "PartyTBL");
             return int.Parse(ds.Tables["PartyTBL"].Rows[0]["PVotes"].ToString());
         }
